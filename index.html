@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="images/cv.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,235 +11,226 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>CV</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <img
-        src="https://s3-alpha-sig.figma.com/img/327e/1027/27f8803676f1e5a26c4e31dbaf5cba56?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CPiXcaOuSn-pZ1oCJuUB-ZlOnEw6YY-a2Jnl809m11LWSBiygPMeTY9FkFd7HP0ARREmf82GbGIz4-BoPW7g39FkdwYzxSlVWfFVdsA~pUWv6A0CTBL7e~xGT7iCcTJ2arbJWzBzAMoaWZvQ28n~kHV9tKIS2oe0sFzkNZGpYaleRkNgr5eI-VLIZcVceC-ZoJWYlKMEsz8qxvi7ua8ey7WtcTt3FrgTmAQPHVNEGodUybKv8ZO5E-5H3TLIEJtLY10nsN4dM-LmaGyjYTWbVv3ur4Y55JkHmzo3EzazLSwjwJdENW-7Yng8q-KXk0Z~h0TIaY0HaYGxpyKiFehWcw__"
-        alt="Фото"
-        class="photo"
-      />
-
-      <div class="main-info">
-        <h3>Hello 👋🏻 I’m</h3>
-        <div class="about">
-          <span class="name">Karthik SR</span>
-          <span class="position">UX/UI Designer</span>
-        </div>
-      </div>
-
-      <div class="languages-wrap">
-        <h2>Languages</h2>
-        <div class="languages">
-          <div class="languages-text">
-            <h3>English</h3>
-            <h3>Malayalam</h3>
-            <h3>Hindi</h3>
-          </div>
-          <div class="languages-level">
-            <input type="range" min="1" max="100" value="50" class="slider" />
-            <input type="range" min="1" max="100" value="50" class="slider" />
-            <input type="range" min="1" max="100" value="50" class="slider" />
+    <div class="cv">
+      <div class="container">
+        <img
+          src="images/photo.png"
+          alt="Фото"
+          class="wrap photo"
+        />
+  
+        <div class="wrap about">
+          <h3 contenteditable="true">Hello 👋🏻 I’m</h3>
+          <div class="about-info">
+            <span contenteditable="true" class="name">Karthik SR</span>
+            <span contenteditable="true" class="position">UX/UI Designer</span>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="experience-wrap">
-        <h2>Experience</h2>
-
-        <div class="place-wrap recent">
-          <div class="place-header">
-            <span class="data">Jun. 2023 - Present</span>
-            <span class="recent-tag">most recent</span>
-          </div>
-          <div class="place-info">
-            <div class="position">
-              <h3>Marketing Manager</h3>
-              <span>Pankayam | Full-time</span>
+  
+        <div class="wrap languages">
+          <h2 contenteditable="true">Languages</h2>
+          <div class="languages-info">
+            <div class="languages-text">
+              <h3 contenteditable="true">English</h3>
+              <h3 contenteditable="true">Malayalam</h3>
+              <h3 contenteditable="true">Hindi</h3>
             </div>
-            <div class="job">
-              <ul>
-                <li>
-                  Strategy development and planning of campaigns that promote
-                  the business and generate genuine traffic
-                </li>
-                <li>SEO Content Creation for Blogs, Website, Social media</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="place-wrap">
-          <div class="place-header">
-            <span class="data">2017 - Present</span>
-          </div>
-          <div class="place-info">
-            <div class="position">
-              <h3>Graphic / Web designer</h3>
-              <span>Freelance</span>
-            </div>
-            <div class="job">
-              <ul>
-                <li>
-                  Development of internal projects from scratch, product design
-                  of brands
-                </li>
-                <li>Landing page, webapps and hybrid apps</li>
-                <li>
-                  Coordinating with outside agencies, art services, web
-                  designer, marketing, printers, and colleagues as necessary.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="place-wrap">
-          <div class="place-header">
-            <span class="job-data">Sep. 2021 - Jun. 2023</span>
-          </div>
-          <div class="place-info">
-            <div class="position">
-              <h3>Legal Assistant</h3>
-              <span>Law Firm | Intern</span>
-            </div>
-            <div class="job">
-              <ul>
-                <li>
-                  Provide administrative support to lawyer and enhance office
-                  effectiveness
-                </li>
-                <li>Handle communication with clients, witnesses etc.</li>
-                <li>
-                  repare case briefs and summarize depositions, interrogatories
-                  and testimony
-                </li>
-              </ul>
+            <div class="languages-level">
+              <input type="range" min="0" max="100" value="100" class="slider" id="slider"/>
+              <input type="range" min="0" max="100" value="100" class="slider" />
+              <input type="range" min="0" max="100" value="70" class="slider" />
             </div>
           </div>
         </div>
       </div>
-
-      <div class="tools-wrap">
-        <h3>Tools</h3>
-        <div class="tools">
-          <span class="tools-title design">design</span>
-          <div class="tools-info">
-            <img src="icons/logoFigma.svg" alt="Figma icon" class="icon" />
-            <img src="icons/icon _adobePhotoshop_.svg" alt="Adobe Photoshop icon" class="icon" />
-            <img src="icons/icon _adobeIllustrator_.svg" alt="Adobe Illustraitor icon" class="icon" />
-            <img src="icons/icon _adobePremiere_.svg" alt="Adobe Premiere icon" class="icon" />
-            <img src="icons/logoNotion.svg" alt="Notion icon" class="icon" />
-            <img src="icons/logoMeet.svg" alt="GoogleMeet icon" class="icon" />
-          </div>
-        </div>
-        <div class="tools">
-          <span class="tools-title no-code">no-code</span>
-          <div class="tools-info">
-            <img src="icons/logoZapìer 1.svg" alt="Zapier icon" class="icon" />
-            <img src="icons/logoWebflow.svg" alt="Webflow icon" class="icon" />
-            <img src="icons/logoFramer.svg" alt="Framer icon" class="icon" />
-            <img src="icons/logoWordpress.svg" alt="Wordpress icon" class="icon" />
-          </div>
-        </div>
-        <div class="tools">
-          <span class="tools-title artificial-intelligence">artificial intelligence</span>
-          <div class="tools-info">
-            <img src="icons/logoChatGPT 1.svg" alt="ChatGPT icon" class="icon" />
-            <img src="icons/logoCopilot 1.svg" alt="Copilot icon" class="icon" />
-            <img src="icons/logoMidjourney 1.svg" alt="Midjourney icon" class="icon" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      
-      <div class="education-wrap">
-        <h2>Education</h2>
-        
-        <div class="education-info">
-          
-          <div class="education-card important">
-            <div class="education-header">
-              <h3>2023</h3>
-              <img src="icons/heart.svg" alt="heart" class="heart-icon">
+  
+      <div class="container">
+        <div class="wrap experience">
+          <h2 contenteditable="true">Experience</h2>
+  
+          <div class="place-wrap recent">
+            <div class="place-header">
+              <span contenteditable="true">Jun. 2023 - Present</span>
+              <span contenteditable="true" class="recent-tag">most recent</span>
             </div>
-            <h3> UI/UX</h3>
-            <div class="hashtags">
-              <span>#UX</span>
-              <span>#UI</span>
-              <span>#research</span>
-              <span>#DesignSystem</span>
-              <span>#Ui</span>
-              <span>#wireframing</span>
-              <span>#figma</span>
-              <span>#Ux</span>
-            </div>
-            <span>Coursera</span>
-          </div>
-          
-          <div class="education-card">
-            <div class="education-header">
-              <h3>2017 - 2022</h3>
-            </div>
-            <h3>Law</h3>
-            <div class="hashtags">
-              <span>#law</span>
-              <span>#legalStudies</span>
-              <span>#contracts</span>
-              <span>#internationalLaws</span>
-            </div>
-            <span>University of Kerala</span>
-          </div>
-
-          <div class="education-card">
-            <div class="education-header">
-              <h3>2017</h3>
-            </div>
-            <h3>Graphic design</h3>
-            <div class="hashtags">
-              <span>#branding</span>
-              <span>#web</span>
-              <span>#illustration</span>
-              <span>#adobe</span>
-            </div>
-            <span>Coursrea</span>
-          </div>
-          </div>
-        </div>
-
-        <div class="additional-info-wrap">
-
-          <div class="interests-wrap">
-            <h3>Interests</h3>
-            <div class="interests-list">
-              <span class="interests-item">branding</span>
-              <span class="interests-item">design</span>
-              <span class="interests-item">photography</span>
-              <span class="interests-item">artificial intelligence</span>
-              <span class="interests-item">illustration</span>
-              <span class="interests-item">typography</span>
-              <span class="interests-item">social networks</span>
-              <span class="interests-item">research</span>
-              <span class="interests-item">dron pilot</span>
-              <span class="interests-item">games</span>
+            <div class="place-info">
+              <div class="position">
+                <h3 contenteditable="true">Marketing Manager</h3>
+                <span contenteditable="true">Pankayam | Full-time</span>
+              </div>
+              <div class="job">
+                <ul>
+                  <li contenteditable="true">
+                    Strategy development and planning of campaigns that promote
+                    the business and generate genuine traffic
+                  </li>
+                  <li contenteditable="true">SEO Content Creation for Blogs, Website, Social media</li>
+                </ul>
+              </div>
             </div>
           </div>
   
-          <div class="contacts-wrap">
-            <h2>Let´s chat! I´m ready to work on excinting projects</h2>
-            <span>srkarthik.designscape@gmail.com</span>
+          <div class="place-wrap">
+            <div class="place-header">
+              <span contenteditable="true" class="data">2017 - Present</span>
+            </div>
+            <div class="place-info">
+              <div class="position">
+                <h3 contenteditable="true">Graphic / Web designer</h3>
+                <span contenteditable="true">Freelance</span>
+              </div>
+              <div class="job">
+                <ul>
+                  <li contenteditable="true">
+                    Development of internal projects from scratch, product design
+                    of brands
+                  </li>
+                  <li contenteditable="true">Landing page, webapps and hybrid apps</li>
+                  <li contenteditable="true">
+                    Coordinating with outside agencies, art services, web
+                    designer, marketing, printers, and colleagues as necessary.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+  
+          <div class="place-wrap">
+            <div class="place-header">
+              <span contenteditable="true" class="job-data">Sep. 2021 - Jun. 2023</span>
+            </div>
+            <div class="place-info">
+              <div class="position">
+                <h3 contenteditable="true">Legal Assistant</h3>
+                <span contenteditable="true">Law Firm | Intern</span>
+              </div>
+              <div class="job">
+                <ul>
+                  <li contenteditable="true">
+                    Provide administrative support to lawyer and enhance office
+                    effectiveness
+                  </li>
+                  <li contenteditable="true">Handle communication with clients, witnesses etc.</li>
+                  <li contenteditable="true">
+                    repare case briefs and summarize depositions, interrogatories
+                    and testimony
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-
+  
+        <div class="wrap tools">
+          <h2 contenteditable="true">Tools</h2>
+          <div class="tools-info">
+            <span class="design">design</span>
+            <div class="tools-list">
+              <img src="icons/logoFigma.svg" alt="Figma icon" class="icon" />
+              <img src="icons/icon _adobePhotoshop_.svg" alt="Adobe Photoshop icon" class="icon" />
+              <img src="icons/icon _adobeIllustrator_.svg" alt="Adobe Illustraitor icon" class="icon" />
+              <img src="icons/icon _adobePremiere_.svg" alt="Adobe Premiere icon" class="icon" />
+              <img src="icons/logoNotion.svg" alt="Notion icon" class="icon" />
+              <img src="icons/logoMeet.svg" alt="GoogleMeet icon" class="icon" />
+            </div>
+          </div>
+          <div class="tools-info">
+            <span class="no-code">no-code</span>
+            <div class="tools-list">
+              <img src="icons/logoZapier 1.svg" alt="Zapier icon" class="icon" />
+              <img src="icons/logoWebflow.svg" alt="Webflow icon" class="icon" />
+              <img src="icons/logoFramer.svg" alt="Framer icon" class="icon" />
+              <img src="icons/logoWordpress.svg" alt="Wordpress icon" class="icon" />
+            </div>
+          </div>
+          <div class="tools-info">
+            <span class="artificial-intelligence">artificial intelligence</span>
+            <div class="tools-list">
+              <img src="icons/logoChatGPT 1.svg" alt="ChatGPT icon" class="icon" />
+              <img src="icons/logoCopilot 1.svg" alt="Copilot icon" class="icon" />
+              <img src="icons/logoMidjourney 1.svg" alt="Midjourney icon" class="icon" />
+            </div>
+          </div>
+        </div>
       </div>
-      
-      
+  
+      <div class="container">
+        
+        <div class="wrap education">
+          <h2 contenteditable="true">Education</h2>
+          
+          <div class="education-info">
+            
+            <div class="education-card important">
+              <div class="education-header">
+                <h3 contenteditable="true">2023</h3>
+                <img src="icons/heart.svg" alt="heart" class="heart-icon">
+              </div>
+              <h3 contenteditable="true"> UI/UX</h3>
+              <div class="hashtags">
+                <p contenteditable="true">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</p>
+              </div>
+              <span contenteditable="true">Coursera</span>
+            </div>
+            
+            <div class="education-card">
+              <div class="education-header">
+                <h3 contenteditable="true">2017 - 2022</h3>
+              </div>
+              <h3 contenteditable="true">Law</h3>
+              <div class="hashtags">
+                <p contenteditable="true">#law #legalStudies #contracts #internationalLaws</p>
+              </div>
+              <span contenteditable="true">University of Kerala</span>
+            </div>
+  
+            <div class="education-card">
+              <div class="education-header">
+                <h3 contenteditable="true">2017</h3>
+              </div>
+              <h3 contenteditable="true">Graphic design</h3>
+              <div class="hashtags">
+                <p contenteditable="true">#branding #web #illustration #adobe</p>
+              </div>
+              <span contenteditable="true">Coursrea</span>
+            </div>
+            </div>
+          </div>
+  
+          <div class="additional-info-wrap">
+  
+            <div class="wrap interests">
+              <h2 contenteditable="true">Interests</h2>
+              <div class="interests-list">
+                <span contenteditable="true" class="interests-item">branding</span>
+                <span contenteditable="true" class="interests-item">design</span>
+                <span contenteditable="true" class="interests-item">photography</span>
+                <span contenteditable="true" class="interests-item">artificial intelligence</span>
+                <span contenteditable="true" class="interests-item">illustration</span>
+                <span contenteditable="true"class="interests-item">typography</span>
+                <span contenteditable="true" class="interests-item">social networks</span>
+                <span contenteditable="true" class="interests-item">research</span>
+                <span contenteditable="true" class="interests-item">dron pilot</span>
+                <span contenteditable="true" class="interests-item">games</span>
+              </div>
+            </div>
+    
+            <div class="wrap contacts">
+              <h2 contenteditable="true">Let´s chat! I´m ready to work on excinting projects</h2>
+              <span contenteditable="true">srkarthik.designscape@gmail.com</span>
+            </div>
+          </div>
+        </div>
     </div>
+    <div class="downloading">
+      <button id="downloadPdf">Скачать в формате PDF</button>
+    </div>
+
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
